@@ -24,7 +24,9 @@ class MoviesController < ApplicationController
 	def show #shows the new
 		@movie = Movie.find(params[:id])
 
-		imdb_query = "http://www.omdbapi.com/?i=&t=#{@movie.title}"
+		movie_sub = @movie.title.gsub(" ", "+")
+
+		imdb_query = "http://www.omdbapi.com/?i=&t=#{movie_sub}"
 
 		response = HTTParty.get(imdb_query)
 		@json_items = JSON.parse(response)
