@@ -1,0 +1,15 @@
+<!-- Form for Movies -->
+<h2>Please add your movie information here.</h2>
+
+<%= form_for :movie, :url => {:action => "create"} do |f|%>
+
+  <%= label_tag(:movie_title) %>
+  <%= f.text_field(:title) %>
+  <%= label_tag(:year) %>
+  <%= f.text_field(:year) %>
+  <br>
+
+  <%= f.submit("Add Your Movie Entry") %>
+
+<% end %>
+
