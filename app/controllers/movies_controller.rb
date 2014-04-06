@@ -24,11 +24,13 @@ class MoviesController < ApplicationController
 	def show #shows the new
 		@movie = Movie.find(params[:id])
 
-		@imdb = "http://www.omdbapi.com/?i=tt1285016&t="
+		imdb_query = "http://www.omdbapi.com/?i=&t=#{@movie.title}"
 
-		redirect_to(For your show route use the imdb_id to link to the movies imdb page.
+		response = HTTParty.get(imdb_query)
+		@json_items = JSON.parse(response)
 
-)
+
+
 
 
 	end
