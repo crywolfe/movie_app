@@ -34,6 +34,8 @@ end
 
 gem 'shoulda-matchers', '~> 2.5.0'
 
+gem 'httparty'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
