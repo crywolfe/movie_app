@@ -32,7 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'shoulda-matchers', '~> 2.5.0'
+group :development, :test do
+	gem 'shoulda-matchers', '~> 2.5.0'
+	gem 'rspec-rails'
+end
 
 gem 'httparty'
 
