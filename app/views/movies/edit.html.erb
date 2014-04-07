@@ -1,6 +1,6 @@
 <h2>Edit <%= @movie.title %></h2>
 
-<%= form_for :movie, :url => {:action => "update", :id => @movie.id} do |f|%>
+<%= form_for @movie do |f|%>
 
   <%= label_tag(:movie_title) %>
   <%= f.text_field(:title) %>
@@ -8,6 +8,6 @@
   <%= f.text_field(:year) %>
   <br>
 
-  <%= f.submit("Submit Your Edited Movie") %>
+  <%= f.submit %>
 
 <% end %>
